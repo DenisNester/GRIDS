@@ -145,7 +145,21 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7eK-Sc-upJ" userLabel="safeAreaForScrollView">
                                 <rect key="frame" x="0.0" y="94" width="414" height="675"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkv-XO-FBt" userLabel="containerForScrollView">
+                                        <rect key="frame" x="20" y="262.5" width="374" height="150"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="Ins-OV-MQI"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="mkv-XO-FBt" firstAttribute="leading" secondItem="7eK-Sc-upJ" secondAttribute="leading" constant="20" id="0NO-qD-fZl"/>
+                                    <constraint firstItem="mkv-XO-FBt" firstAttribute="centerY" secondItem="7eK-Sc-upJ" secondAttribute="centerY" id="fs4-LF-PYa"/>
+                                    <constraint firstAttribute="trailing" secondItem="mkv-XO-FBt" secondAttribute="trailing" constant="20" id="pKo-Ne-cL2"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="c6E-sT-EsZ"/>
@@ -165,6 +179,8 @@
                         <connections>
                             <outlet property="areaForScrollView" destination="7eK-Sc-upJ" id="7Wu-i0-hD8"/>
                             <outlet property="bottomNavigationBarToSafeArea" destination="A1t-30-QAW" id="5IE-eV-qTr"/>
+                            <outlet property="containerForScrollView" destination="mkv-XO-FBt" id="o9X-l3-INC"/>
+                            <outlet property="containerViewHeight" destination="Ins-OV-MQI" id="xAX-KE-2F2"/>
                             <outlet property="gridOneXThreeButton" destination="Mke-sb-x9G" id="5Wa-jr-ZGd"/>
                             <outlet property="gridThreeXFiveButton" destination="bzX-Zq-mFA" id="0nU-ID-8dI"/>
                             <outlet property="gridThreeXFourButton" destination="0ZG-YM-b5G" id="qaD-Yu-2ZC"/>

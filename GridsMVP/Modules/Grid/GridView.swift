@@ -23,7 +23,6 @@ class GridView: UIView {
     @IBOutlet weak var containerForScrollView: UIView!
     @IBOutlet weak var containerViewHeight: NSLayoutConstraint!
     
-    
     var imageScrollView: GridImageScrollView!
   
     override func awakeFromNib() {
@@ -44,8 +43,14 @@ class GridView: UIView {
         setupGridButtonFor(button: gridThreeXFiveButton, with: "3x5", and: #imageLiteral(resourceName: "3x5"))
     }
     
+    func setupScrollView(with delegate: UIScrollViewDelegate) {
+        imageScrollView.delegate = delegate
+    }
     
     private func setupGridImageScrollView() {
+        imageScrollView.bounces = false
+        imageScrollView.alwaysBounceHorizontal = false
+        imageScrollView.decelerationRate = .fast
         imageScrollView.showsVerticalScrollIndicator = false
         imageScrollView.showsHorizontalScrollIndicator = false
         imageScrollView.translatesAutoresizingMaskIntoConstraints = false // позволяет нам устанавливать свои констрейнты
@@ -62,7 +67,6 @@ class GridView: UIView {
         button.tintColor = .white
         button.alignTextBelow()
     }
-    
     
     override func layoutSubviews() {
         containerViewHeight.constant = areaForScrollView.bounds.height / 5

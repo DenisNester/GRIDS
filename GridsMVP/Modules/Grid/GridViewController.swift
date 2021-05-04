@@ -15,6 +15,8 @@ class GridViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        sourceView.setupScrollView(with: self)
+        
         if UIDevice.current.hasTopNotch {
             sourceView.bottomNavigationBarToSafeArea.constant = 18
         } else {
@@ -28,10 +30,8 @@ class GridViewController: UIViewController {
         switch sender.currentTitle {
         case "3x1":
             sourceView.containerViewHeight.constant = sourceView.areaForScrollView.bounds.height / 5
-            print(sourceView.areaForScrollView.bounds.height / 5)
         case "3x2":
             sourceView.containerViewHeight.constant = (sourceView.areaForScrollView.bounds.height / 5) * 2
-            print(sourceView.containerViewHeight.constant)
         case "3x3":
             sourceView.containerViewHeight.constant = (sourceView.areaForScrollView.bounds.height / 5) * 3
         case "3x4":
@@ -46,7 +46,13 @@ class GridViewController: UIViewController {
         }
         
     }
+}
+
+
+extension GridViewController: UIScrollViewDelegate {
     
-    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return sourceView.imageScrollView.imageZoomView
+    }
     
 }

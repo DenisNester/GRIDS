@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e3q-x0-6Nn">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="DvW-mO-Hno">
+            <objects>
+                <viewController storyboardIdentifier="homeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e3q-x0-6Nn" customClass="HomeViewController" customModule="GridsMVP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KVR-Wk-Eqd" customClass="HomeView" customModule="GridsMVP" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Alk-JB-UTA">
+                                <rect key="frame" x="0.0" y="106" width="414" height="708"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ldk-uS-ZZ4">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2qi-zb-Jc7" customClass="PhotoViewCell" customModule="GridsMVP" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WZC-k5-xo6">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ans-PI-LSV" userLabel="topView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JqI-Fd-o5z">
+                                        <rect key="frame" x="178" y="16" width="58" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="pUo-NM-5gw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="8" minY="2" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Recents">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="recentsButtonPressed:" destination="e3q-x0-6Nn" eventType="touchUpInside" id="jYw-eJ-xr3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="JqI-Fd-o5z" firstAttribute="top" secondItem="ans-PI-LSV" secondAttribute="top" constant="16" id="WQu-Xk-gKu"/>
+                                    <constraint firstAttribute="height" constant="40" id="jCR-Kc-ilT"/>
+                                    <constraint firstItem="JqI-Fd-o5z" firstAttribute="centerX" secondItem="ans-PI-LSV" secondAttribute="centerX" id="voc-dz-ETb"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXT-Wu-RAT">
+                                <rect key="frame" x="26" y="733" width="362" height="55"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="HIO-9f-sQp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <state key="normal" title="Make Grid">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KLO-KU-IKI">
+                                <rect key="frame" x="0.0" y="106" width="414" height="0.0"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="GN8-ug-RLR"/>
+                                </constraints>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tJX-t3-hdO"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ans-PI-LSV" firstAttribute="leading" secondItem="tJX-t3-hdO" secondAttribute="leading" id="2qF-V6-uxP"/>
+                            <constraint firstItem="KLO-KU-IKI" firstAttribute="leading" secondItem="tJX-t3-hdO" secondAttribute="leading" id="AJw-28-erU"/>
+                            <constraint firstItem="tJX-t3-hdO" firstAttribute="bottom" secondItem="Alk-JB-UTA" secondAttribute="bottom" constant="48" id="L2p-Ni-jBM"/>
+                            <constraint firstItem="tJX-t3-hdO" firstAttribute="trailing" secondItem="GXT-Wu-RAT" secondAttribute="trailing" constant="26" id="Ltg-Hf-wE7"/>
+                            <constraint firstItem="GXT-Wu-RAT" firstAttribute="leading" secondItem="tJX-t3-hdO" secondAttribute="leading" constant="26" id="P8A-UF-7b2"/>
+                            <constraint firstItem="Alk-JB-UTA" firstAttribute="trailing" secondItem="tJX-t3-hdO" secondAttribute="trailing" id="UhY-Y3-lYx"/>
+                            <constraint firstItem="Alk-JB-UTA" firstAttribute="top" secondItem="ans-PI-LSV" secondAttribute="bottom" constant="22" id="W5V-pe-Y1K"/>
+                            <constraint firstItem="GXT-Wu-RAT" firstAttribute="bottom" secondItem="Alk-JB-UTA" secondAttribute="bottom" constant="-26" id="a50-y1-6lR"/>
+                            <constraint firstItem="ans-PI-LSV" firstAttribute="trailing" secondItem="tJX-t3-hdO" secondAttribute="trailing" id="hhJ-Ww-5uE"/>
+                            <constraint firstItem="KLO-KU-IKI" firstAttribute="top" secondItem="ans-PI-LSV" secondAttribute="bottom" constant="22" id="mBx-CB-Z96"/>
+                            <constraint firstItem="tJX-t3-hdO" firstAttribute="trailing" secondItem="KLO-KU-IKI" secondAttribute="trailing" id="qRy-1M-3C7"/>
+                            <constraint firstItem="Alk-JB-UTA" firstAttribute="leading" secondItem="tJX-t3-hdO" secondAttribute="leading" id="rLt-LT-R4p"/>
+                            <constraint firstItem="ans-PI-LSV" firstAttribute="top" secondItem="tJX-t3-hdO" secondAttribute="top" id="uEp-MN-FuD"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="bottomContstraintToSafeArea" destination="L2p-Ni-jBM" id="HHx-9X-YXE"/>
+                            <outlet property="collectionView" destination="Alk-JB-UTA" id="4Uh-X7-fmd"/>
+                            <outlet property="containerView" destination="KLO-KU-IKI" id="AU4-XC-1k5"/>
+                            <outlet property="containterViewHeight" destination="GN8-ug-RLR" id="YIG-je-S93"/>
+                            <outlet property="containterViewToTopView" destination="mBx-CB-Z96" id="vF9-m0-Xfe"/>
+                            <outlet property="makeGridButton" destination="GXT-Wu-RAT" id="ql8-RA-bjg"/>
+                            <outlet property="recentsButton" destination="JqI-Fd-o5z" id="Vm2-lI-pzq"/>
+                            <outlet property="topConstraintToSafeArea" destination="WQu-Xk-gKu" id="sv6-SE-TLz"/>
+                            <outlet property="topConstraintToTopView" destination="W5V-pe-Y1K" id="WTg-EJ-bRS"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="LBC-Wg-RaI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vrG-0W-ute" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924.63768115942037" y="-236.38392857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

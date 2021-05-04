@@ -1,0 +1,14 @@
+input_dir: ../../
+      
+ib:
+    inputs: ./Modules/
+    outputs:
+        - templateName: scenes-swift5
+          output: Swiftgen_StoryboardScenes.swift
+      
+xcassets:
+    inputs:
+        - Resources/Assets.xcassets
+    outputs:
+        - templateName: swift4
+          output: Swiftgen_Assets.swift
